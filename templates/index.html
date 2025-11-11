@@ -1,0 +1,61 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fraud Detection System — SecurePay</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+  <header class="hero-bg">
+    <div class="hero-inner">
+      <h1>Fraud Detection System</h1>
+      <p class="lead">Upload transaction CSV (Time, Amount, V1..V28). The AI model will analyze transactions and highlight suspected frauds.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card upload-card">
+      <h2>Upload CSV</h2>
+      <p class="muted">Select a CSV file containing transaction rows. Required headers: <code>Time, Amount, V1..V28</code></p>
+
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input id="fileInput" name="file" type="file" accept=".csv" />
+        <div class="controls">
+          <button id="uploadBtn" type="button" class="btn primary">Analyze CSV</button>
+          <a id="downloadLink" class="btn ghost hidden" download>Download Results</a>
+        </div>
+      </form>
+
+      <!-- Loader / animation -->
+      <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+        <div class="loader-text">Analyzing transactions — this may take a few seconds...</div>
+      </div>
+
+      <!-- Result bar: shows number of frauds and a scrollable list of S.N.s -->
+      <div id="resultPanel" class="result-panel hidden">
+        <div class="result-header">
+          <div class="result-title">Detected Fraud Transactions</div>
+          <div id="fraudCount" class="result-count">0</div>
+        </div>
+
+        <div class="fraud-list" id="fraudList">
+          <!-- JS will populate scrollable list items here -->
+        </div>
+      </div>
+
+      <div id="alert" class="alert hidden"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>Designed by Jobin K</div>
+    <div>kjobin487@gmail.com | 9025363685</div>
+  </footer>
+</body>
+</html>
+
+

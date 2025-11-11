@@ -1,0 +1,188 @@
+/* static/css/style.css */
+
+/* Classic hero background (subtle texture + gradient) */
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  color: #0b2136;
+  background: #f5f7fb;
+}
+
+.hero-bg {
+  background: linear-gradient(135deg,#0a2540 0%, #13436d 50%, #0e81ce 100%);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  background-image:
+    linear-gradient(135deg, rgba(10,37,64,0.6), rgba(14,129,206,0.2)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><rect width="240" height="240" fill="%230b2136" /></svg>');
+  background-blend-mode: overlay;
+  box-shadow: 0 6px 30px rgba(2,8,23,0.35);
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-inner h1 {
+  font-size: 42px;
+  margin: 0 0 10px;
+  letter-spacing: 0.6px;
+}
+
+.lead {
+  max-width: 760px;
+  margin: 0 auto;
+  opacity: 0.95;
+  font-size: 16px;
+}
+
+/* Container */
+.container {
+  max-width: 920px;
+  margin: -40px auto 40px;
+  padding: 0 20px;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(12,34,56,0.08);
+}
+
+.upload-card h2 {
+  margin: 0 0 6px;
+}
+.muted {
+  color: #657586;
+  margin-bottom: 12px;
+}
+
+/* Input and buttons */
+#fileInput {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e6eef6;
+  margin-bottom: 12px;
+  background: #fbfdff;
+}
+
+.controls {
+  display:flex;
+  gap: 12px;
+  align-items:center;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg,#0b6adf,#0e81ce);
+  color: white;
+  box-shadow: 0 6px 18px rgba(14,129,206,0.22);
+}
+.btn.ghost {
+  background: transparent;
+  color: #0b2a4a;
+  border: 1px solid #e6eef6;
+}
+
+/* Loader */
+.loader {
+  margin-top: 16px;
+  display:flex;
+  gap: 16px;
+  align-items:center;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 5px solid rgba(10,37,64,0.12);
+  border-top-color: #0b6adf;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loader-text { color: #0b2a4a; font-weight:600; }
+
+/* Result panel */
+.result-panel {
+  margin-top: 18px;
+  border-radius: 10px;
+  border: 1px solid #e6eef6;
+  overflow: hidden;
+}
+
+.result-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 12px 16px;
+  background: linear-gradient(90deg,#f6fbff,#fff);
+  border-bottom: 1px solid #eef6ff;
+}
+.result-title { font-weight:700; }
+.result-count { background:#ffe9e9; color:#b32d2d; padding:6px 10px; border-radius:8px; font-weight:700; }
+
+/* Scrollable fraud list */
+.fraud-list {
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 12px 16px;
+  display:flex;
+  flex-wrap: nowrap;
+  gap:12px;
+  align-items:flex-start;
+}
+
+/* Individual fraud chip */
+.fraud-chip {
+  min-width: 120px;
+  background: #fff3f3;
+  border: 1px solid #ffe6e6;
+  color: #b02a2a;
+  padding: 10px;
+  border-radius: 12px;
+  font-weight:700;
+  display:inline-flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+/* Alert */
+.alert {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ffdede;
+  background: #fff7f7;
+  color: #9a2a2a;
+}
+
+/* Footer */
+.footer {
+  margin: 40px auto;
+  text-align:center;
+  color:#475569;
+  padding: 18px 12px;
+}
+.hidden { display:none; }
+
+/* Responsive */
+@media (max-width:760px) {
+  .hero-inner h1 { font-size: 28px; }
+  .fraud-chip { min-width: 100px; }
+}
