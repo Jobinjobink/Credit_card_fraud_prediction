@@ -15,7 +15,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(RESULT_FOLDER, exist_ok=True)
 
 # ------------------ LOAD MODEL ------------------
-model_path = "src/train_data/rr_model.pkl"
+model_path = "rr_model.pkl"
 model = joblib.load(model_path)
 
 # ------------------ FLASK APP ------------------
